@@ -24,7 +24,7 @@ Source: proposal, section IV-A. The system remembers controls, devices, mappings
 | control `actions` | `press` `flip` `turn` |
 | mapping `status` | `Pending` `Verified` `Rejected` `Stale` |
 | `channel` | `IR` `WIFI` `BT` `ARM` (`ARM` is the physical press, by the arm or a linear actuator) |
-| device `risk` | `low` `medium` `high` |
+| device `risk` | `low` `high` |
 | `independence` | `act_and_tell` `ask_first` `suggest_only` |
 | routine `source` | `habit` `manual` |
 | routine feedback | `keep` `change` `remove` |

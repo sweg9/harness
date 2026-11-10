@@ -11,7 +11,7 @@ Every run, including a cancelled one, writes one log entry (FR-12). The entry ma
 | `started_at` | UTC ISO 8601 | |
 | `intent` | string | From the VLM; `null` if the cloud was not reached |
 | `device_id` | string | Target device |
-| `risk` | `low` `medium` `high` | Risk class used for the decision |
+| `risk` | `low` `high` | Risk class used for the decision |
 | `confidence` | number | Final confidence (VLM, trigger reliability, past acceptance) |
 | `decision` | `act` `ask` `suggest` | Result of the autonomy policy (C-03) |
 | `channel` | `IR` `WIFI` `BT` `ARM` or `null` | Channel of the last attempt |

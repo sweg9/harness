@@ -22,7 +22,7 @@ Requirements, owners and starting values: https://sweg9.github.io/docs/product/r
 | FR-07 | No action without a `Verified` mapping; channels tried by score; arm only after all fail |
 | FR-08 | Main check decides; second checks only when it is unsure; `unsure` is checked once more without operating the device, then shown to the resident |
 | FR-09 | The robot goes to the saved `press_spot` first; re-finding below similarity 0.7 cancels; option A: homography maps a marker point correctly; option B: the right actuator is chosen for a control |
-| FR-10 | Person or pet in the work area of the arm or the actuators cancels; high-risk devices are never pressed; emergency stop cuts the motors at once |
+| FR-10 | Person or pet in the work area of the arm or the actuators cancels; high-risk devices are pressed only when the risk policy (FR-06) allows it; emergency stop cuts the motors at once |
 | FR-11 | At most 2 tries, only after a failed check, gate before each, state check after each; `unsure` never leads to another press |
 | FR-12 | Channel score uses 30% weight for the newest result; link confidence steps; a successful press saves `press_spot`; every run is logged, including cancelled ones |
 
