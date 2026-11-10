@@ -14,18 +14,18 @@ Rules: the `standards` skill (`standards/common.md`, `ai-output.md`, `execution-
 
 | Rule | What to look for |
 |---|---|
-| C-02 | Other spellings of stages, control kinds, statuses, channels or results (for example `button`, `dial`, `wifi`, `PHYS`, `confirmed`) |
+| C-02 | Other spellings of stages, control kinds, statuses, channels or results (for example `button`, `push_button`, `wall_switch`, `wifi`, `PHYS`, `confirmed`) |
 | C-03 | Turning on a high-risk device without asking; a high-risk routine without a warning at registration or a notification on every run; acting when the cloud VLM was not reached; missing independence step-down after rejections |
-| C-04 | A path to a hand command (arm or actuator) that does not pass the safety gate right before it; pressing a high-risk device when the risk policy (FR-06) does not allow it; no emergency stop; more than 2 tries; actuator stroke or force not limited |
+| C-04 | A path to a hand command (actuator) that does not pass the safety gate right before it; pressing a high-risk device when the risk policy (FR-06) does not allow it; no emergency stop; more than 2 tries; actuator stroke or force not limited |
 | C-05 | Upload or storage of full frames or video; more than crops sent to the cloud; faces in git; dataset photos outside the private repository; proactive features on by default |
 | C-06 | Missing reject, feedback, pause or stop controls; manual control that depends on the system |
 | C-07, L-01 to L-08 | Runs without a log entry; cancelled runs not logged; entries edited after writing; missing plain-language explanation |
 | C-08 | Acting with a mapping that is not `Verified`; a `Stale` mapping used without re-verification; a wireless method kept without verification |
-| C-09 | A command without a state check; arm used before wireless channels are exhausted; endless retries; another press after `unsure`; a run with no result |
+| C-09 | A command without a state check; physical press used before wireless channels are exhausted; endless retries; another press after `unsure`; a run with no result |
 | C-10 | Keys, tokens, passwords, personal data |
 | C-11 | Generated files, build outputs or logs committed; non-English text outside code comments |
 | C-12 | Time limits, thresholds, retries or weights written inline in logic instead of a settings file |
-| C-13 | Arm or actuator code that bypasses the RAL; a channel adapter with extra abilities; a hard-wired planner or hand option |
+| C-13 | Actuator code that bypasses the RAL; a channel adapter with extra abilities; a hard-wired planner or hand option |
 | A-01 to A-08 | Model output used without schema validation; missing `confidence` or `reason`; prompts edited in place; personal data in prompts; a model answer overriding the policy or the gate |
 
 3. For a rule that cannot be checked from the code, write "not checkable here" and name who must confirm.
