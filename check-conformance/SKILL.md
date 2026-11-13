@@ -1,6 +1,6 @@
 ---
 name: check-conformance
-description: Check a repo or a pull request against the mandatory project standards (rules C-01 to C-13, A-01 to A-08, L-01 to L-08) and report violations with file and line evidence. Use before merging, when reviewing code, prompts or data, or when asked whether something follows the standards.
+description: Check a repo or a pull request against the mandatory project standards (rules C-01 to C-13, A-01 to A-08, L-01 to L-09) and report violations with file and line evidence. Use before merging, when reviewing code, prompts or data, or when asked whether something follows the standards.
 ---
 
 # Check conformance
@@ -19,7 +19,7 @@ Rules: the `standards` skill (`standards/common.md`, `ai-output.md`, `execution-
 | C-04 | A path to a hand command (actuator) that does not pass the safety gate right before it; pressing a high-risk device when the risk policy (FR-06) does not allow it; no emergency stop; more than 2 tries; actuator stroke or force not limited |
 | C-05 | Upload or storage of full frames or video; more than crops sent to the cloud; faces in git; dataset photos outside the private repository; proactive features on by default |
 | C-06 | Missing reject, feedback, pause or stop controls; manual control that depends on the system |
-| C-07, L-01 to L-08 | Runs without a log entry; cancelled runs not logged; entries edited after writing; missing plain-language explanation |
+| C-07, L-01 to L-09 | Runs without a log entry; cancelled runs not logged; entries edited after writing; missing plain-language explanation |
 | C-08 | Acting with a mapping that is not `Verified`; a `Stale` mapping used without re-verification; a wireless method kept without verification |
 | C-09 | A command without a state check; physical press used before wireless channels are exhausted; endless retries; another press after `unsure`; a run with no result |
 | C-10 | Keys, tokens, passwords, personal data |

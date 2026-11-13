@@ -5,7 +5,7 @@ description: Validate run log entries (JSON Lines) against the run log standard 
 
 # Check execution log
 
-Schema and rules L-01 to L-08: `standards/execution-log.md`. Enumerations: `standards/data-model.md`.
+Schema and rules L-01 to L-09: `standards/execution-log.md`. Enumerations: `standards/data-model.md`.
 
 ## Steps
 
@@ -16,6 +16,7 @@ Schema and rules L-01 to L-08: `standards/execution-log.md`. Enumerations: `stan
    - every `ARM` attempt has `gate: pass`, and there are at most 2 (L-04)
    - `ARM` comes only after every wireless attempt failed or when there was none (L-05)
    - `checks.disagree` is set when main and second checks differ (L-06)
+   - `source` is `platform` for `WIFI` and `BT` and `camera` for `IR` and `ARM`, in `checks` and in every attempt; with `platform`, `checks.second` is `null` and `checks.disagree` is `false` (L-09)
    - `decision` matches the autonomy policy for `risk` and `confidence` (C-03)
 4. Check for forbidden content: image data, base64 blobs, faces, secrets (L-07).
 5. Compare the number of entries with the number of triggers in the same period, if known, and list missing runs (L-01).

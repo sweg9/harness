@@ -6,7 +6,7 @@ One place for the standards every repo must follow, the shared skills, and CI/CD
 
 | Folder | Kind | What it does |
 |---|---|---|
-| `standards/` | Standards | Mandatory rules for every repo: common (C-01 to C-13), AI output (A-01 to A-08), run log (L-01 to L-08), data model, per-repo obligations |
+| `standards/` | Standards | Mandatory rules for every repo: common (C-01 to C-13), AI output (A-01 to A-08), run log (L-01 to L-09), data model, per-repo obligations |
 | `check-conformance/` | Skill | Checks code, prompts and data against the standards, with file and line evidence |
 | `check-execution-log/` | Skill | Validates run log entries (JSON Lines) against the standard |
 | `validate-dataset/` | Skill | Checks the label schema, privacy and the held-out photo session |

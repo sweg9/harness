@@ -17,9 +17,9 @@ Every run, including a cancelled one, writes one log entry (FR-12). The entry ma
 | `channel` | `IR` `WIFI` `BT` `ARM` or `null` | Channel of the last attempt |
 | `result` | `success` `failure` `unsure` `cancelled` | |
 | `reason` | string | Required when `result` is `failure`, `unsure` or `cancelled` |
-| `checks` | object | `main` (`yes` `no` `unsure`), `second` (surroundings, such as the room getting brighter), `disagree` (boolean) |
+| `checks` | object | Result of the last attempt: `source` (`platform` or `camera`), `main` (`yes` `no` `unsure`), `second` (surroundings, such as the room getting brighter; `null` when `source` is `platform`), `disagree` (boolean) |
 | `stages` | array | One item per stage reached: `stage`, `status` (`ok` `fail` `skipped`), `latency_ms`, `reason` |
-| `attempts` | array | One item per channel try: `channel`, `latency_ms`, `answer`; for `ARM` also `gate` (`pass` or the failed check) |
+| `attempts` | array | One item per channel try: `channel`, `latency_ms`, `answer`, `source` (`platform` or `camera`); for `ARM` also `gate` (`pass` or the failed check) |
 | `explanation` | string | The plain-language sentence shown to the resident |
 
 ## Rules
@@ -32,9 +32,10 @@ Every run, including a cancelled one, writes one log entry (FR-12). The entry ma
 - L-06 A disagreement between the main check and the second check sets `checks.disagree` (FR-08).
 - L-07 Entries carry no images, no faces and no secrets (C-05, C-10). They may name a crop by id.
 - L-08 Format: JSON Lines, one entry per line, UTF-8.
+- L-09 `source` follows the channel (FR-08): `platform` for `WIFI` and `BT`, whose devices report their state, and `camera` for `IR` and `ARM`. With `platform`, `checks.second` is `null` and `checks.disagree` is `false`.
 
 ## Example
 
 ```json
-{"run_id":"r-0007","trigger":"routine","started_at":"2026-11-03T12:05:00Z","intent":"turn on the lamp","device_id":"dev_lamp_01","risk":"low","confidence":0.86,"decision":"act","channel":"ARM","result":"success","reason":null,"checks":{"main":"yes","second":{"room_brighter":"yes"},"disagree":false},"stages":[{"stage":"S4","status":"ok","latency_ms":2100},{"stage":"S5","status":"fail","latency_ms":5200,"reason":"IR sent, lamp did not light"},{"stage":"S6","status":"ok","latency_ms":6400}],"attempts":[{"channel":"IR","latency_ms":5200,"answer":"no"},{"channel":"ARM","latency_ms":6400,"answer":"yes","gate":"pass"}],"explanation":"I switched on the lamp at 21:05 by pressing its switch because of your evening routine. Checked: it worked."}
+{"run_id":"r-0007","trigger":"routine","started_at":"2026-11-03T12:05:00Z","intent":"turn on the lamp","device_id":"dev_lamp_01","risk":"low","confidence":0.86,"decision":"act","channel":"ARM","result":"success","reason":null,"checks":{"source":"camera","main":"yes","second":{"room_brighter":"yes"},"disagree":false},"stages":[{"stage":"S4","status":"ok","latency_ms":2100},{"stage":"S5","status":"fail","latency_ms":5200,"reason":"IR sent, lamp did not light"},{"stage":"S6","status":"ok","latency_ms":6400}],"attempts":[{"channel":"IR","latency_ms":5200,"answer":"no","source":"camera"},{"channel":"ARM","latency_ms":6400,"answer":"yes","source":"camera","gate":"pass"}],"explanation":"I switched on the lamp at 21:05 by pressing its switch because of your evening routine. Checked: it worked."}
 ```

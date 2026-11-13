@@ -20,7 +20,7 @@ Requirements, owners and starting values: https://sweg9.github.io/docs/product/r
 | FR-05 | Duplicate triggers within 10 s merge; VLM time-out leads to suggest only |
 | FR-06 | Act, ask or suggest for each risk class and confidence band |
 | FR-07 | No action without a `Verified` mapping; channels tried by score; physical press only after all fail |
-| FR-08 | Main check decides; second checks only when it is unsure; `unsure` is checked once more without operating the device, then shown to the resident |
+| FR-08 | Reporting devices use the platform's state and errors; IR and every press get a camera check, in which the main check decides; second checks only when it is unsure; `unsure` is checked once more without operating the device, then shown to the resident |
 | FR-09 | The robot goes to the saved `press_spot` first; re-finding below similarity 0.7 cancels; the right actuator and push time are chosen for a control |
 | FR-10 | Person or pet in the work area of the actuators cancels; high-risk devices are pressed only when the risk policy (FR-06) allows it; emergency stop cuts the motors at once |
 | FR-11 | At most 2 tries, only after a failed check, gate before each, state check after each; `unsure` never leads to another press |
