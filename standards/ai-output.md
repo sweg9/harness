@@ -12,7 +12,7 @@ All recognition runs on the hub. The proposal sends crops to a cloud VLM; the te
 | A-04 | A rejected result fails the stage with a reason. |
 | A-05 | A model is a versioned file. A used version is never overwritten; a new version comes with a model card: training data, date, reason for the change and evaluation result. |
 | A-06 | A new version is adopted only after the `model-regression` skill shows it is not worse than the old one on the fixed `eval` set. |
-| A-07 | Models run on the hub (C-05). No frame leaves the hub, and no model API in the cloud is called. Only crops of controls and devices and the results go to the cloud. |
+| A-07 | Models run on the hub (C-05). No frame leaves the hub, and no model API is called. Only crops of controls and devices and the results go to the server. |
 | A-08 | A model answer never overrides the autonomy policy (C-03) or the safety gate (C-04). |
 
 Confidence is not a decision. Thresholds and time limits are settings (C-12).

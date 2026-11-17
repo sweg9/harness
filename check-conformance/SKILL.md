@@ -15,9 +15,9 @@ Rules: the `standards` skill (`standards/common.md`, `ai-output.md`, `execution-
 | Rule | What to look for |
 |---|---|
 | C-02 | Other spellings of stages, control kinds, statuses, channels or results (for example `button`, `push_button`, `wall_switch`, `wifi`, `PHYS`, `confirmed`) |
-| C-03 | Turning on a high-risk device without asking; a high-risk routine without a warning at registration or a notification on every run; acting when the hub could not reach the cloud; missing independence step-down after rejections |
+| C-03 | Turning on a high-risk device without asking; a high-risk routine without a warning at registration or a notification on every run; acting when the hub could not reach the server; missing independence step-down after rejections |
 | C-04 | A path to a hand command (actuator) that does not pass the safety gate right before it; pressing a high-risk device when the risk policy (FR-06) does not allow it; no emergency stop; more than 2 tries; actuator stroke or force not limited |
-| C-05 | Upload or storage of full frames or video; more than crops sent to the cloud; faces in git; dataset photos outside the private repository; proactive features on by default |
+| C-05 | Upload or storage of full frames or video; more than crops sent to the server; data sent outside the home; faces in git; dataset photos outside the private repository; proactive features on by default |
 | C-06 | Missing reject, feedback, pause or stop controls; manual control that depends on the system |
 | C-07, L-01 to L-09 | Runs without a log entry; cancelled runs not logged; entries edited after writing; missing plain-language explanation |
 | C-08 | Acting with a mapping that is not `Verified`; a `Stale` mapping used without re-verification; a wireless method kept without verification |

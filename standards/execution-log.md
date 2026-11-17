@@ -9,7 +9,7 @@ Every run, including a cancelled one, writes one log entry (FR-12). The entry ma
 | `run_id` | string | One per trigger; merged duplicate triggers share it |
 | `trigger` | `sensor` `time` `routine` | What started the run |
 | `started_at` | UTC ISO 8601 | |
-| `intent` | string | From the routine: its device and action; `null` if the cloud was not reached |
+| `intent` | string | From the routine: its device and action; `null` if the server was not reached |
 | `device_id` | string | Target device |
 | `risk` | `low` `high` | Risk class used for the decision |
 | `confidence` | number | Final confidence (trigger reliability, past acceptance) |
