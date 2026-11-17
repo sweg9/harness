@@ -24,6 +24,7 @@ Source: proposal, section IV-A. The system remembers controls, devices, mappings
 | control `actions` | `press` `flip` `turn` |
 | mapping `status` | `Pending` `Verified` `Rejected` `Stale` |
 | `channel` | `IR` `WIFI` `BT` `ARM` (`ARM` is the physical press by the robot's hand, the linear actuators in the prototype) |
+| device `type` | `light` `fan` `tv` `air_purifier` `heater` `electric_blanket` `microwave` `other`. The device detector learns a subset, starting with `light` and `fan` |
 | device `risk` | `low` `high` |
 | `independence` | `act_and_tell` `ask_first` `suggest_only` |
 | routine `source` | `habit` `manual` |

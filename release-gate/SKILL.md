@@ -15,7 +15,7 @@ Run in this order and record each result before the next step.
 2. `validate-dataset` if labels changed. **Blocker:** "not ready".
 3. `check-fr-coverage`. **Blocker:** a requirement touched by the change with no test.
 4. `check-execution-log` on the latest run logs, then `run-stage-eval`. **Blocker:** a target in `eval-targets` fails, or a stage success rate drops below the last accepted run by more than the allowed drop in settings. Measures without data are "not measured", not passed.
-5. `prompt-regression` if a prompt file changed. **Blocker:** verdict "reject".
+5. `model-regression` if a model file, its training data or a model threshold changed. **Blocker:** verdict "reject".
 6. `build-sim-demo` if `sim-demo` changed. **Blocker:** the build fails.
 
 ## Verdict

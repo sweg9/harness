@@ -13,7 +13,7 @@ description: Find why a run failed or was cancelled, using its run log entry, an
 4. Classify the cause:
    - recognition (S1, FR-01): control not found, wrong kind, duplicate
    - mapping (S2, FR-02): wrong device, mapping not `Verified` or `Stale`
-   - routine or intent (S3, S4, FR-04, FR-05): wrong intent, duplicate trigger, VLM time-out
+   - routine or intent (S3, S4, FR-04, FR-05): wrong intent, duplicate trigger, hub offline
    - autonomy (FR-06): the policy chose ask or suggest; this is not a failure
    - channel (S5, FR-07): command not delivered, channel time-out
    - verification (FR-08): main check wrong, `unsure`, checks disagree

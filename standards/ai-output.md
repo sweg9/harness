@@ -1,16 +1,18 @@
 # AI output rules
 
-Applies to every prompt and model in `ai-engine` and to every caller of it. Prompt ids and templates: https://sweg9.github.io/docs/product/prompts (P-S1, P-S2, P-S4, P-S5).
+Applies to every model and check in `ai-engine` and to every caller of it. Model ids and how each one works: https://sweg9.github.io/docs/product/models (M-S1a, M-S1b, M-S2, M-S5).
+
+All recognition runs on the hub. The proposal sends crops to a cloud VLM; the team replaced it with local models (decision of 2026-11-17), so the system calls no model API.
 
 | Id | Rule |
 |---|---|
-| A-01 | Output is JSON that matches a schema stored next to the prompt. Text around the JSON is rejected. |
-| A-02 | Every result has `confidence` (0 to 1) and `reason` (one sentence). |
-| A-03 | The model may answer `unsure`. The caller then follows C-09. It never guesses. |
-| A-04 | Invalid output is rejected by code and retried once. A second failure fails the stage with a reason. |
-| A-05 | A prompt is a versioned file. A used file is never edited; a change is a new version with model, date, reason and evaluation result in its header. |
-| A-06 | A new version is adopted only after the `prompt-regression` skill shows it is not worse than the old one on the fixed photo set. |
-| A-07 | Inputs to the cloud VLM are crops (up to 3) and short notes only (C-05). No names, faces or personal identifiers. |
-| A-08 | A model answer never overrides the autonomy policy (C-03) or the safety gate (C-04). A time-out of the intent call (about 8 s) means the system only suggests. |
+| A-01 | Every model step returns a typed result that code checks. A result with a missing field or a value out of range is rejected. |
+| A-02 | Every result has `confidence` (0 to 1) and `reason` (one short sentence from a fixed template, such as "brightness rose 42%"). |
+| A-03 | A step answers `unsure` (a state of `unknown`, a check of `unsure`) when its confidence is below its threshold. The caller then follows C-09. It never guesses. |
+| A-04 | A rejected result fails the stage with a reason. |
+| A-05 | A model is a versioned file. A used version is never overwritten; a new version comes with a model card: training data, date, reason for the change and evaluation result. |
+| A-06 | A new version is adopted only after the `model-regression` skill shows it is not worse than the old one on the fixed `eval` set. |
+| A-07 | Models run on the hub (C-05). No frame leaves the hub, and no model API in the cloud is called. Only crops of controls and devices and the results go to the cloud. |
+| A-08 | A model answer never overrides the autonomy policy (C-03) or the safety gate (C-04). |
 
 Confidence is not a decision. Thresholds and time limits are settings (C-12).

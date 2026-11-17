@@ -1,6 +1,6 @@
 ---
 name: check-conformance
-description: Check a repo or a pull request against the mandatory project standards (rules C-01 to C-13, A-01 to A-08, L-01 to L-09) and report violations with file and line evidence. Use before merging, when reviewing code, prompts or data, or when asked whether something follows the standards.
+description: Check a repo or a pull request against the mandatory project standards (rules C-01 to C-13, A-01 to A-08, L-01 to L-09) and report violations with file and line evidence. Use before merging, when reviewing code, models or data, or when asked whether something follows the standards.
 ---
 
 # Check conformance
@@ -15,7 +15,7 @@ Rules: the `standards` skill (`standards/common.md`, `ai-output.md`, `execution-
 | Rule | What to look for |
 |---|---|
 | C-02 | Other spellings of stages, control kinds, statuses, channels or results (for example `button`, `push_button`, `wall_switch`, `wifi`, `PHYS`, `confirmed`) |
-| C-03 | Turning on a high-risk device without asking; a high-risk routine without a warning at registration or a notification on every run; acting when the cloud VLM was not reached; missing independence step-down after rejections |
+| C-03 | Turning on a high-risk device without asking; a high-risk routine without a warning at registration or a notification on every run; acting when the hub could not reach the cloud; missing independence step-down after rejections |
 | C-04 | A path to a hand command (actuator) that does not pass the safety gate right before it; pressing a high-risk device when the risk policy (FR-06) does not allow it; no emergency stop; more than 2 tries; actuator stroke or force not limited |
 | C-05 | Upload or storage of full frames or video; more than crops sent to the cloud; faces in git; dataset photos outside the private repository; proactive features on by default |
 | C-06 | Missing reject, feedback, pause or stop controls; manual control that depends on the system |
@@ -26,7 +26,7 @@ Rules: the `standards` skill (`standards/common.md`, `ai-output.md`, `execution-
 | C-11 | Generated files, build outputs or logs committed; non-English text outside code comments |
 | C-12 | Time limits, thresholds, retries or weights written inline in logic instead of a settings file |
 | C-13 | Actuator code that bypasses the RAL; a channel adapter with extra abilities; a hard-wired planner or hand option |
-| A-01 to A-08 | Model output used without schema validation; missing `confidence` or `reason`; prompts edited in place; personal data in prompts; a model answer overriding the policy or the gate |
+| A-01 to A-08 | Model output used without a check in code; missing `confidence` or `reason`; a used model file overwritten or without a model card; a call to a model API or a frame sent off the hub; a model answer overriding the policy or the gate |
 
 3. For a rule that cannot be checked from the code, write "not checkable here" and name who must confirm.
 

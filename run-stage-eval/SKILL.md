@@ -22,7 +22,7 @@ The proposal sets **starting values**, not targets. This skill measures; it judg
 | Share of runs that needed the physical press, and press success per try | `attempts` with `ARM` | FR-11 |
 | Main and second checks disagreement rate | `checks.disagree` | FR-08 |
 | Decisions per risk class (act, ask, suggest) | `risk`, `decision` | FR-06 |
-| Time limits kept: VLM about 8 s, channel 5 s, effect wait 3 s | `stages`, `attempts` | FR-05, FR-07, FR-08 |
+| Time limits kept: channel 5 s, effect wait 3 s | `stages`, `attempts` | FR-05, FR-07, FR-08 |
 | Detector precision and recall per kind, and type and state accuracy, on the evaluation 20% | labels and detections | FR-01 |
 
 ## Output

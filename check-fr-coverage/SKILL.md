@@ -14,10 +14,10 @@ Requirements, owners and starting values: https://sweg9.github.io/docs/product/r
 | FR | What a test must show |
 |---|---|
 | FR-01 | Three control kinds detected (wall switch, toggle, power strip); a seen control is not added twice (fingerprint) |
-| FR-02 | A candidate starts `Pending`, becomes `Verified` only with a clear change and VLM agreement, becomes `Stale` when the control moves; a `Verified` mapping saves `verify_spot` |
+| FR-02 | A candidate starts `Pending`, becomes `Verified` only with a clear change and a device found in the changed region, becomes `Stale` when the control moves; a `Verified` mapping saves `verify_spot` |
 | FR-03 | A wireless method is kept only after a verified test; 3 retries, then the resident is asked; no method left means actuator target |
 | FR-04 | A habit (30 min window, 3 days) creates a routine; 3 rejections lower independence by one step |
-| FR-05 | Duplicate triggers within 10 s merge; VLM time-out leads to suggest only |
+| FR-05 | Duplicate triggers within 10 s merge; no connection from the hub to the cloud leads to suggest only |
 | FR-06 | Act, ask or suggest for each risk class and confidence band |
 | FR-07 | No action without a `Verified` mapping; channels tried by score; physical press only after all fail |
 | FR-08 | Reporting devices use the platform's state and errors; IR and every press get a camera check, in which the main check decides; second checks only when it is unsure; `unsure` is checked once more without operating the device, then shown to the resident |
