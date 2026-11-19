@@ -1,6 +1,6 @@
 # harness
 
-One place for the standards every repo must follow, the shared skills, and CI/CD. The other repos mount this repo as `skills/` at their root (git submodule). Everything follows the proposal *Vision-Based Recognition and Actuation of Unconnected Home Controls* and its requirements FR-01 to FR-12, published in the [wiki](https://sweg9.github.io/docs/product/requirements).
+One place for the standards every repo must follow, the shared skills, and CI/CD. The other repos mount this repo as `skills/` at their root (git submodule). Everything follows the proposal *NOVA: Non-connected Object Vision and Actuation for Smart Home Routines* and its requirements FR-01 to FR-12, published in the [wiki](https://sweg9.github.io/docs/product/requirements).
 
 ## Contents
 

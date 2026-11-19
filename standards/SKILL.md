@@ -5,7 +5,7 @@ description: The mandatory standards every project repo (dataset, ai-engine, bac
 
 # Project standards
 
-These rules are mandatory. They come from the proposal *Vision-Based Recognition and Actuation of Unconnected Home Controls* (https://sweg9.github.io/docs/papers/proposal) and its requirements FR-01 to FR-12 (https://sweg9.github.io/docs/product/requirements). They make the seven repos work as one system. A rule has an id so that reviews, tests and the harness can cite it.
+These rules are mandatory. They come from the proposal *NOVA: Non-connected Object Vision and Actuation for Smart Home Routines* (https://sweg9.github.io/docs/papers/proposal) and its requirements FR-01 to FR-12 (https://sweg9.github.io/docs/product/requirements). They make the seven repos work as one system. A rule has an id so that reviews, tests and the harness can cite it.
 
 | File | Content |
 |---|---|
